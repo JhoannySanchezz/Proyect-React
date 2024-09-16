@@ -1,8 +1,15 @@
-import Item from '../Item/Item'
+import Item from '../Item/Item';
+import React from 'react';
+
 
 const ItemList = ({products}) => {
+
+  if (!products) {
+    return <p>Cargando productos...</p>; 
+  }
     return(
      <div className="item-list">
+
       {products.map((prod) => (
         <Item 
           key={prod.id}
@@ -14,7 +21,7 @@ const ItemList = ({products}) => {
         />
       ))}
         </div>
-    )
-}
+    );
+};
 
 export default ItemList
